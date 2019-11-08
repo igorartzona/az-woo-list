@@ -1,2 +1,2 @@
-# az-woo-list
+# az-woo-list-view
 Плагин отображения списка товаров woo
