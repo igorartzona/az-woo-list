@@ -1,0 +1,131 @@
+/*
+Стили для отображения списка товаров в виде таблицы.
+Данный файл (az-table-view) подключается на нужных страницах (см. functions.php).
+Т.к на странице товара захотелось блок related оставить плиткой, стили приведены с учетом этого.
+Кроме того, если товары отображаются с помощью шоткода, чтобы оставить их плиткой, нужно шоткоду дать class="related"
+*/
+
+/* Установка ширины "строки" .tax-product_cat  таблицы вне зависимости от количества "столбцов" в настройках woo*/
+
+body .site-content *:not(.related) > ul.products li.product.type-product{
+   width: 100%;
+   margin: 0;
+   border-bottom: 1px dotted silver;
+   padding: 0.5em 0;
+}
+
+body .site-content *:not(.related) > ul.products li.product.type-product:nth-child(2n){
+   background: whitesmoke;
+}
+
+*:not(.related) > ul.products li.product{
+    /*background: lightblue;*/
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    //padding: 0.5em 0;
+    margin-top:0.25em;
+    margin-bottom: 0;
+}
+
+*:not(.related) > ul.products li.product .woocommerce-loop-product__link{
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */ /*29.12.18*/
+    flex-grow: 1;
+}
+
+*:not(.related) > ul.products li.product.type-product img{
+    margin: 0 0.5em 0 0;
+}
+
+*:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__title{
+    margin: 0;
+}
+
+*:not(.related) > ul.products li.product .add_to_cart_button{
+    margin-left: 2em;
+}
+
+/*29.12.18*/
+@media (max-width: 568px) {
+	*:not(.related) > ul.products li.product .woocommerce-loop-product__link{
+		flex-wrap: wrap;
+	}
+
+	/*10.04.19*/
+	*:not(.related) > ul.products li.product{
+		border: 1px solid rgba(0,0,0,0.2);
+		border-radius: 0.5em;
+		margin: 0.5em 0;
+	}
+	*:not(.related)>ul.products li.product-category {
+		border: 0;
+	}
+	*:not(.related) > ul.products li.product.type-product img{
+		margin:0.5em;
+	}
+
+	*:not(.related) > ul.products li.product .add_to_cart_button{
+		margin-left:0;
+	}
+
+	/*10.04.19 end*/
+
+	*:not(.related) > ul.products li.product .add_to_cart_button,
+	a.added_to_cart.wc-forward	{
+		align-self: flex-end;
+	}
+
+}
+/*29.12.18 end*/
+
+*:not(.related) > ul.products li.product .woocommerce-loop-product__link > *:not(:first-child){
+    margin-bottom: 0;
+    text-align:left;
+    padding: 0.5em;
+}
+
+
+
+
+/* кнопка просмотр корзины */
+*:not(.related) > ul.products li.product .added_to_cart {
+    margin: 0 0.5em;
+    margin-top: -4px;
+}
+
+@media (max-width: 768px) {
+    *:not(.related) > ul.products li.product img{
+        /* max-width: 50px; */
+	max-width: 150px; /*29.12.18 end*/
+    }
+
+    *:not(.related) > ul.products li.product .woocommerce-loop-product__link *:not(:first-child){
+	margin:0.5em 0;
+    }
+
+    *:not(.related)  .price del{
+	display:block;
+    }
+
+}
+
+@media (min-width: 769px) {
+    *:not(.related) > ul.products li.product:not(.product-category) img{
+        max-width: 75px;
+    }
+
+    *:not(.related) > ul.products li.product .price{
+        margin-left:auto;
+	flex-shrink: 0;	/*29.12.18*/
+        max-width: 260px; /*15.05.19*/
+        font-size: 1rem;
+    }
+
+    *:not(.related) > ul.products li.product .woocommerce-loop-product__title{
+	/* max-width:50%; */ /*29.12.18*/
+    }
+
+}
+
