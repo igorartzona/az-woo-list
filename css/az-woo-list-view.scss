@@ -1,0 +1,63 @@
+/* Файл стилей для вывода списка продуктов */
+.az-awlv-list ul.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.az-awlv-list ul.products li{
+    border: 1px solid;
+    display:flex;
+    align-items:flex-start;
+    justify-content: space-between;
+}
+
+.az-awlv-image img{
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.az-awlv-add-to-cart > .button {
+    display: block;
+    text-align: center;
+}
+
+
+.az-awlv-add-to-cart .price{
+    display: block;
+    text-align: center;
+}
+
+
+.az-awlv-add-to-cart .button{
+    margin: 1em;
+}
+
+@media only screen and (min-width: 568px) {
+
+    .az-awlv-list ul.products li{
+        max-height: 200px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+
+    .az-awlv-list ul.products li{
+        flex-wrap: wrap;
+    }
+
+    .az-awlv-list ul.products li div{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .az-awlv-add-to-cart .button{
+        display:table-cell;
+    }
+
+    .az-awlv-add-to-cart > * {
+        margin-bottom: 1em;
+    }
+
+
+}
