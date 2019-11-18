@@ -39,3 +39,93 @@ if ( ! function_exists( 'az_awlv_end_div' ) ) {
        echo '</div>';
     }
 }
+
+if ( ! function_exists( 'az_awlv_woocommerce_template_loop_product_title' ) ) {
+    /* Функция замены названия родителя на артикул в случае вариаций
+    * @return void
+    */
+    function az_awlv_woocommerce_template_loop_product_title() {
+
+        global  $product;
+
+        echo '<h2 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">';
+
+        if ( $product->get_type() == 'variation' ){
+
+            echo $product->get_sku();
+
+        } else echo get_the_title();
+
+        echo '</h2>';
+
+    }
+}
+
+
+
+
+if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
+    /* Функция отображения атрибутов вариации
+    * @return void
+    */
+    function az_awlv_show_variation_attributes() {
+
+        global  $product;
+
+        if ( $product->get_type() == 'variation' ){
+
+            $attributes = $product->get_attributes();
+
+            $attr_prefix = 'pa_';
+
+            //var_dump($attributes);
+
+            echo '<div class="variation_detail_wrap">';
+
+            foreach ($attributes as $key => $attr_slug ){
+
+                //$key = str_replace( "attribute_", "",$key);
+
+
+                if ( strpos( $key, $attr_prefix ) === 0 ) {
+
+
+                    $tax = get_term_by( 'slug', $attr_slug, $key);
+
+                    $attr_slug =  wc_attribute_label( $key );
+
+                    $attr_name = $tax->name;
+
+                } else {
+
+                    //$attr_slug = 'слаг';
+
+                    $attr_name = $key;
+
+                }
+
+                ?>
+
+                <div class="adaptive-wrap">
+
+                    <div class="adaptive-col-1" >
+                        <?php echo $attr_slug; ?>
+                    </div>
+
+                    <div class="adaptive-col-2" >
+                        <?php echo $attr_name;  ?>
+                    </div>
+
+                </div>
+
+                <?php
+
+            }
+
+            echo '</div>';
+
+        }
+
+
+    }
+}
