@@ -58,6 +58,8 @@ if ( ! function_exists( 'az_awlv_woocommerce_template_loop_product_title' ) ) {
 
         echo '</h2>';
 
+        //echo "<a target=_blank href='https://termoshkaf.com/?s=".$product->get_sku()."&post_type=product&type_aws=true'><img width='50px' src='https://termoshkaf.com/wp-content/uploads/2018/08/TT_logo75.png'></a>";
+
     }
 }
 
@@ -80,12 +82,17 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
             //var_dump($attributes);
 
-            echo '<div class="variation_detail_wrap">';
+            echo '<div class="variation-detail-wrap">';
 
             foreach ($attributes as $key => $attr_slug ){
 
                 //$key = str_replace( "attribute_", "",$key);
 
+                ?>
+
+                <div class="adaptive-wrap">
+
+                <?php
 
                 if ( strpos( $key, $attr_prefix ) === 0 ) {
 
@@ -96,17 +103,9 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
                     $attr_name = $tax->name;
 
-                } else {
+                    ?>
 
-                    //$attr_slug = 'слаг';
 
-                    $attr_name = $key;
-
-                }
-
-                ?>
-
-                <div class="adaptive-wrap">
 
                     <div class="adaptive-col-1" >
                         <?php echo $attr_slug; ?>
@@ -116,7 +115,22 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
                         <?php echo $attr_name;  ?>
                     </div>
 
-                </div>
+
+
+                    <?php
+
+
+                } else {
+
+                    the_excerpt();
+
+                }
+
+                ?></div><?php
+
+                ?>
+
+
 
                 <?php
 
@@ -124,7 +138,10 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
             echo '</div>';
 
-        }
+        }else {
+
+        /* здесь можно вывести в строку дополнительную инфу для обычных товаров */
+    }
 
 
     }
