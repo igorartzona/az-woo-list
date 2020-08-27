@@ -49,6 +49,10 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
                 justify-content: center;
 	}
 
+        *:not(.related) > ul.products li.product:not(.product-category) {
+            flex-wrap: wrap; /*?*/
+        }
+
 	*:not(.related) > ul.products li.product{
             border: 1px solid rgba(0,0,0,0.2);
             border-radius: 0.5em;
@@ -184,6 +188,13 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
         font-size: 10px;
     }
 }
+
+@media (max-width: 769px) {
+   .variation-detail-wrap{
+        width: 100%;
+    }
+}
+
 
 @media (min-width: 769px) {
    .variation-detail-wrap{
