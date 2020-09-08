@@ -78,13 +78,14 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
             $attributes = $product->get_attributes();
 
+            /* Отбираем только глобальные атрибуты */
             $attr_prefix = 'pa_';
 
             //var_dump($attributes);
 
             echo '<div class="variation-detail-wrap">';
 
-            foreach ($attributes as $key => $attr_slug ){
+            foreach ( $attributes as $key => $attr_slug ){
 
                 //$key = str_replace( "attribute_", "",$key);
 
@@ -118,7 +119,6 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
 
                     <?php
-
 
                 } else {
 

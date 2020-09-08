@@ -162,9 +162,8 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
     max-width: 39%;
     text-align: right;
     align-self: flex-end;
+    color:#666;
 }
-
-
 
 .variation-detail-wrap{
     flex:auto;
@@ -198,6 +197,6 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
 
 @media (min-width: 769px) {
    .variation-detail-wrap{
-        max-width: 35%;
+        width: 35%;
     }
 }
