@@ -114,7 +114,7 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
     }
 
     *:not(.related) > ul.products li.product:not(.product-category) img{
-        max-width: 75px;
+        max-width: 100px;
     }
 
     *:not(.related) > ul.products li.product .woocommerce-loop-product__title{
@@ -173,8 +173,8 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
     border: 1px solid darkgray;
     background: white;
     /*border-top: 0;
-    border-bottom: 0;*/
-    border-radius: 0.5em;
+    border-bottom: 0;
+    border-radius: 0.5em;*/
 
 }
 

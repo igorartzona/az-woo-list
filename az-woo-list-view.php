@@ -12,7 +12,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:        az-woo-list-view
  * Domain Path:       /languages
- * WC tested up to: 3.8.0
+ * WC tested up to: 4.5.2
  */
 
 global $product;
