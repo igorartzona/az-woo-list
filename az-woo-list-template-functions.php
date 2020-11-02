@@ -87,8 +87,6 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
             foreach ( $attributes as $key => $attr_slug ){
 
-                //$key = str_replace( "attribute_", "",$key);
-
                 ?>
 
                 <div class="adaptive-wrap">
@@ -97,6 +95,7 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
                 if ( strpos( $key, $attr_prefix ) === 0 ) {
 
+                    // Получаем имя глобального атрибута
 
                     $tax = get_term_by( 'slug', $attr_slug, $key);
 
@@ -106,8 +105,6 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
                     ?>
 
-
-
                     <div class="adaptive-col-1" >
                         <?php echo $attr_slug; ?>
                     </div>
@@ -116,13 +113,44 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
                         <?php echo $attr_name;  ?>
                     </div>
 
-
-
                     <?php
 
                 } else {
 
-                    the_excerpt();
+                    // Получаем имя локального атрибута
+
+                    ?>
+
+                    <div class="adaptive-col-1" >
+
+                        <?php
+
+                        /*Получаем массив атрибутов родительского товара*/
+
+                        $parent_id = $product->get_parent_id();
+
+                        $parent_attributes = get_post_meta( $parent_id,'_product_attributes' );
+
+                        //print_r ( $parent_attributes );
+
+                        // Проверяем вхождение локального атрибута в массив атрибутов родительского товара и вытаскиваем его имя
+
+                        if ( array_key_exists($key,$parent_attributes[0]) ) {
+
+                            echo $parent_attributes[0][$key]['name'];
+
+                        }
+
+                        ?>
+
+                    </div>
+
+                    <div class="adaptive-col-2" >
+                        <?php echo $attr_slug;  ?>
+                    </div>
+
+                    <?php
+
 
                 }
 
@@ -145,4 +173,31 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
 
     }
+}
+
+
+function az_awlv_show_variation_attributes2() {
+    global $product;
+
+    $attributes = $product->get_attributes();
+
+    //echo wc_implode_text_attributes($attributes);
+
+    //print_r($attributes);
+
+    foreach ( $attributes as $key => $attr_slug ){
+
+        //echo wc_variation_attribute_name( $key );
+
+    }
+
+
+    ?>
+
+    <div>
+        <?php the_excerpt();?>
+    </div>
+
+    <?php
+
 }
