@@ -114,7 +114,7 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
     }
 
     *:not(.related) > ul.products li.product:not(.product-category) img{
-        max-width: 100px;
+        max-width: 75px;
     }
 
     *:not(.related) > ul.products li.product .woocommerce-loop-product__title{
@@ -125,11 +125,13 @@ body .site-content *:not(.related) > ul.products li.product.type-product:nth-chi
         margin-left:auto;
         padding-left: 1em;
 	flex-shrink: 0;
-        max-width: max-content;
+        /*max-width: max-content;*/
+        width:20%;
         font-size: 1rem;
     }
 
-    *:not(.related) > ul.products li.product .add_to_cart_button{
+    /* *:not(.related) > ul.products li.product .add_to_cart_button */
+    *:not(.related) > ul.products li.product .button{
         margin-left: 2em;
         width: 15em;
         flex-shrink: 0;

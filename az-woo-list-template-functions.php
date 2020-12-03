@@ -151,14 +151,11 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
 
                     <?php
 
-
                 }
-
-                ?></div><?php
 
                 ?>
 
-
+                </div> <!-- adaptive-wrap -->
 
                 <?php
 
@@ -167,37 +164,9 @@ if ( ! function_exists( 'az_awlv_show_variation_attributes' ) ) {
             echo '</div>';
 
         }else {
-
-        /* здесь можно вывести в строку дополнительную инфу для обычных товаров */
-    }
-
+            /* здесь можно вывести в строку дополнительную инфу для обычных товаров */
+        }
 
     }
-}
-
-
-function az_awlv_show_variation_attributes2() {
-    global $product;
-
-    $attributes = $product->get_attributes();
-
-    //echo wc_implode_text_attributes($attributes);
-
-    //print_r($attributes);
-
-    foreach ( $attributes as $key => $attr_slug ){
-
-        //echo wc_variation_attribute_name( $key );
-
-    }
-
-
-    ?>
-
-    <div>
-        <?php the_excerpt();?>
-    </div>
-
-    <?php
 
 }
