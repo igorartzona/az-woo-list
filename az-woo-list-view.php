@@ -5,7 +5,7 @@
  * Plugin Name:       az-woo-list-view
  * Plugin URI:        https://github.com/igorartzona/
  * Description:       Табличное отображение списка товаров
- * Version:           0.2.1
+ * Version:           0.3.0
  * Author:            jvj
  * Author URI:        https://github.com/igorartzona
  * License:           GPL-2.0+
@@ -29,16 +29,9 @@ function awlv_register_style(){
     require_once ( AWLV_PLUGIN_PATH . 'az-woo-list-hooks.php');
 
     if ( is_product_category() || is_shop() || is_product()  ){
-        //wp_register_style( 'awlv', plugins_url( 'az-woo-list-view/css/az-woo-list-view.css' ) );
-        //wp_enqueue_style( 'awlv' );
-
-        wp_register_style( 'awlv-2', plugins_url( 'az-woo-list-view/css/az-table-view.css' ) );
-        wp_enqueue_style( 'awlv-2' );
-
+        wp_register_style( 'awlv', plugins_url( 'az-woo-list-view/css/az-woo-list-view.css' ) );
+        wp_enqueue_style( 'awlv' );
     }
-
-
-
 
 }
 

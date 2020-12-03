@@ -1,0 +1,268 @@
+/* Файл стилей для вывода списка продуктов */
+
+.woocommerce-active .site-main *:not(.related) > ul.products{
+
+    /*Строка продукта*/
+    li.product.type-product{
+        width: 100%;
+
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top:0.25em;
+        margin-bottom: 0;
+        padding: 0.5em;
+
+        /*Четные строки*/
+        &:nth-child(2n){
+            background: whitesmoke;
+        }
+
+
+        /* ссылка на продукт(без кнопки) */
+        .woocommerce-loop-product__link{
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        /*Картинка продукта*/
+        img{
+            margin: 0 0.5em 0 0;
+        }
+
+        /*Заголовок продукта*/
+        .woocommerce-loop-product__title{
+            margin: 0;
+            text-align: left;
+        }
+
+        .price{
+            margin-bottom: 0;
+        }
+
+        /*кнопка когда товар добавлен в корзину*/
+        .added_to_cart {
+            margin: 0 0.5em;
+            margin-top: -4px;
+        }
+
+
+    }
+/*
+    &:not(:first-child){
+        margin-bottom: 0;
+        padding: 0.5em;
+    }
+*/
+}
+
+/*когда товары выводятся шоткодом*/
+.woocommerce-active .site-main .woocommerce ul.products li.product {
+
+    a.button {
+        background: none;
+        border: 1px solid gray;
+        color: gray;
+        font-weight: normal;
+    }
+
+    a.button:hover{
+        background: whitesmoke;
+    }
+
+}
+
+
+
+@media (max-width: 568px) {
+
+    .woocommerce-active .site-main *:not(.related) > ul.products{
+
+        /*Строка продукта*/
+        li.product.type-product{
+
+            flex-wrap: wrap;
+
+            margin: 0.5em 0;
+
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 0.5em;
+
+            /*Четные строки*/
+            &:nth-child(2n){
+                background: white;
+            }
+
+            /* ссылка на продукт(без кнопки) */
+            .woocommerce-loop-product__link{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            /*Картинка продукта*/
+            img{
+                margin:0.5em;
+            }
+
+            /*Заголовок продукта*/
+            .woocommerce-loop-product__title{
+                text-align: center;
+            }
+
+            /*цена*/
+            .price{
+                width: 100%;
+                padding: 0.5em;
+            }
+
+            /*кнопка*/
+            .button {
+                margin: 0 auto;
+            }
+
+            a.added_to_cart.wc-forward	{
+		align-self: flex-end;
+            }
+
+        }
+
+        li.product-category {
+            /*border: 0;*/
+        }
+
+
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .woocommerce-active .site-main *:not(.related) > ul.products{
+
+        /*Строка продукта*/
+        li.product{
+
+            /*Картинка продукта*/
+            img{
+                max-width: 150px;
+            }
+
+        }
+
+    }
+
+}
+
+@media (min-width: 769px) {
+
+    .woocommerce-active .site-main *:not(.related) > ul.products{
+
+        li.product.type-product{
+            margin: 0;
+
+            border-bottom: 1px dotted silver;
+
+            img{
+                max-width: 75px;
+            }
+
+            .woocommerce-loop-product__title{
+                width:60%;
+            }
+
+            .price{
+                width:20%;
+                flex-shrink: 0;
+                font-size: 1rem;
+
+                margin-left:auto;
+                padding-left: 1em;
+
+
+            }
+
+            .button{
+                width: 15em;
+                flex-shrink: 0;
+                margin-left: 2em;
+            }
+
+        }
+
+    }
+
+}
+
+.woocommerce-loop-category__title {
+    text-transform: uppercase;
+}
+
+/* Отображение атрибутов в вариативных товарах */
+
+.adaptive-wrap{
+
+    display:flex;
+    justify-content: space-between;
+
+    font-size: 0.9em;
+    line-height: 1.4;
+
+    padding: 0.5em;
+
+}
+
+.adaptive-wrap p {
+    margin: 0 auto;
+}
+
+.adaptive-col-1{
+    max-width: 60%;
+    text-align: left;
+
+    color: darkgray;
+}
+
+.adaptive-col-2{
+    max-width: 39%;
+    align-self: flex-end;
+
+    text-align: right;
+
+    color:#666;
+}
+
+.variation-detail-wrap{
+    flex:auto;
+
+    font-family: Verdana;
+    border: 1px solid darkgray;
+    background: white;
+
+}
+
+.adaptive-wrap:not(:first-child){
+    border-top: 1px solid lightgray;
+}
+
+@media (max-width: 568px) {
+    .adaptive-wrap{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 769px) {
+   .variation-detail-wrap{
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 769px) {
+   .variation-detail-wrap{
+        width: 35%;
+    }
+}

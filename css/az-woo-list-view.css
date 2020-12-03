@@ -1,44 +1,152 @@
 @charset "UTF-8";
 /* Файл стилей для вывода списка продуктов */
-.az-awlv-list ul.products {
+.woocommerce-active .site-main *:not(.related) > ul.products {
+  /*Строка продукта*/
+  /*
+      &:not(:first-child){
+          margin-bottom: 0;
+          padding: 0.5em;
+      }
+  */ }
+  .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.25em;
+    margin-bottom: 0;
+    padding: 0.5em;
+    /*Четные строки*/
+    /* ссылка на продукт(без кнопки) */
+    /*Картинка продукта*/
+    /*Заголовок продукта*/
+    /*кнопка когда товар добавлен в корзину*/ }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product:nth-child(2n) {
+      background: whitesmoke; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__link {
+      display: flex;
+      align-items: center;
+      flex-grow: 1; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product img {
+      margin: 0 0.5em 0 0; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__title {
+      margin: 0;
+      text-align: left; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .price {
+      margin-bottom: 0; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .added_to_cart {
+      margin: 0 0.5em;
+      margin-top: -4px; }
+
+/*когда товары выводятся шоткодом*/
+.woocommerce-active .site-main .woocommerce ul.products li.product a.button {
+  background: none;
+  border: 1px solid gray;
+  color: gray;
+  font-weight: normal; }
+.woocommerce-active .site-main .woocommerce ul.products li.product a.button:hover {
+  background: whitesmoke; }
+
+@media (max-width: 568px) {
+  .woocommerce-active .site-main *:not(.related) > ul.products {
+    /*Строка продукта*/ }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product {
+      flex-wrap: wrap;
+      margin: 0.5em 0;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 0.5em;
+      /*Четные строки*/
+      /* ссылка на продукт(без кнопки) */
+      /*Картинка продукта*/
+      /*Заголовок продукта*/
+      /*цена*/
+      /*кнопка*/ }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product:nth-child(2n) {
+        background: white; }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__link {
+        flex-wrap: wrap;
+        justify-content: center; }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product img {
+        margin: 0.5em; }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__title {
+        text-align: center; }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .price {
+        width: 100%;
+        padding: 0.5em; }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .button {
+        margin: 0 auto; }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product a.added_to_cart.wc-forward {
+        align-self: flex-end; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product-category {
+      /*border: 0;*/ } }
+@media (max-width: 768px) {
+  .woocommerce-active .site-main *:not(.related) > ul.products {
+    /*Строка продукта*/ }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product {
+      /*Картинка продукта*/ }
+      .woocommerce-active .site-main *:not(.related) > ul.products li.product img {
+        max-width: 150px; } }
+@media (min-width: 769px) {
+  .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product {
+    margin: 0;
+    border-bottom: 1px dotted silver; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product img {
+      max-width: 75px; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__title {
+      width: 60%; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .price {
+      width: 20%;
+      flex-shrink: 0;
+      font-size: 1rem;
+      margin-left: auto;
+      padding-left: 1em; }
+    .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .button {
+      width: 15em;
+      flex-shrink: 0;
+      margin-left: 2em; } }
+.woocommerce-loop-category__title {
+  text-transform: uppercase; }
+
+/* Отображение атрибутов в вариативных товарах */
+.adaptive-wrap {
   display: flex;
-  flex-wrap: wrap; }
+  justify-content: space-between;
+  font-size: 0.9em;
+  line-height: 1.4;
+  padding: 0.5em; }
 
-.az-awlv-list ul.products li {
-  border: 1px solid;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between; }
+.adaptive-wrap p {
+  margin: 0 auto; }
 
-.az-awlv-image img {
-  max-height: 150px;
-  max-width: 150px; }
+.adaptive-col-1 {
+  max-width: 60%;
+  text-align: left;
+  color: darkgray; }
 
-.az-awlv-add-to-cart > .button {
-  display: block;
-  text-align: center; }
+.adaptive-col-2 {
+  max-width: 39%;
+  align-self: flex-end;
+  text-align: right;
+  color: #666; }
 
-.az-awlv-add-to-cart .price {
-  display: block;
-  text-align: center; }
+.variation-detail-wrap {
+  flex: auto;
+  font-family: Verdana;
+  border: 1px solid darkgray;
+  background: white; }
 
-.az-awlv-add-to-cart .button {
-  margin: 1em; }
+.adaptive-wrap:not(:first-child) {
+  border-top: 1px solid lightgray; }
 
-@media only screen and (min-width: 568px) {
-  .az-awlv-list ul.products li {
-    max-height: 200px;
-    overflow: hidden; } }
-@media only screen and (max-width: 568px) {
-  .az-awlv-list ul.products li {
-    flex-wrap: wrap; }
-
-  .az-awlv-list ul.products li div {
-    text-align: center;
-    margin: 0 auto; }
-
-  .az-awlv-add-to-cart .button {
-    display: table-cell; }
-
-  .az-awlv-add-to-cart > * {
-    margin-bottom: 1em; } }
+@media (max-width: 568px) {
+  .adaptive-wrap {
+    font-size: 10px; } }
+@media (max-width: 769px) {
+  .variation-detail-wrap {
+    width: 100%; } }
+@media (min-width: 769px) {
+  .variation-detail-wrap {
+    width: 35%; } }
+/* ================================= */
+/*             OFORM                 */
+/* ================================= */
