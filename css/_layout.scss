@@ -35,6 +35,7 @@
         /*Заголовок продукта*/
         .woocommerce-loop-product__title{
             margin: 0;
+            padding: 0;
             text-align: left;
         }
 
@@ -182,13 +183,26 @@
                 margin-left:auto;
                 padding-left: 1em;
 
-
+                text-align: right;
             }
 
             .button{
                 width: 15em;
                 flex-shrink: 0;
                 margin-left: 2em;
+            }
+
+        }
+
+    }
+
+    /*размер картинки для страницы категории*/
+    .woocommerce-active.tax-product_cat .site-main *:not(.related) > ul.products{
+
+        li.product.type-product{
+
+            img{
+                max-width: 100px;
             }
 
         }

@@ -5,14 +5,14 @@
  * Plugin Name:       az-woo-list-view
  * Plugin URI:        https://github.com/igorartzona/
  * Description:       Табличное отображение списка товаров
- * Version:           0.3.0
+ * Version:           0.3.1
  * Author:            jvj
  * Author URI:        https://github.com/igorartzona
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:        az-woo-list-view
  * Domain Path:       /languages
- * WC tested up to: 4.6.1
+ * WC tested up to: 4.8.0
  */
 
 global $product;

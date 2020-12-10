@@ -31,6 +31,7 @@
       margin: 0 0.5em 0 0; }
     .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__title {
       margin: 0;
+      padding: 0;
       text-align: left; }
     .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .price {
       margin-bottom: 0; }
@@ -99,11 +100,16 @@
       flex-shrink: 0;
       font-size: 1rem;
       margin-left: auto;
-      padding-left: 1em; }
+      padding-left: 1em;
+      text-align: right; }
     .woocommerce-active .site-main *:not(.related) > ul.products li.product.type-product .button {
       width: 15em;
       flex-shrink: 0;
-      margin-left: 2em; } }
+      margin-left: 2em; }
+
+  /*размер картинки для страницы категории*/
+  .woocommerce-active.tax-product_cat .site-main *:not(.related) > ul.products li.product.type-product img {
+    max-width: 100px; } }
 .woocommerce-loop-category__title {
   text-transform: uppercase; }
 
