@@ -61,6 +61,7 @@
 
 /*когда товары выводятся шоткодом*/
 .woocommerce-active .site-main .woocommerce ul.products li.product {
+    box-shadow: none;
 
     a.button {
         background: none;
