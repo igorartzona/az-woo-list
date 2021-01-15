@@ -20,9 +20,8 @@ if ( ! function_exists( 'az_awlv_woocommerce_template_loop_product_title' ) ) {
 
         echo '</h2>';
 
-        //echo "<a target=_blank href='https://termoshkaf.com/?s=".$product->get_sku()."&post_type=product&type_aws=true'><img width='50px' src='https://termoshkaf.com/wp-content/uploads/2018/08/TT_logo75.png'></a>";
-
     }
+    
 }
 
 

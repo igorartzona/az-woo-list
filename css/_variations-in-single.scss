@@ -1,0 +1,76 @@
+/* Оформление вариаций на странице вариативного товара */
+
+.variation-detail-wrap{
+    flex:auto;
+
+    font-family: Verdana;
+    border: 1px solid darkgray;
+    background: white;
+
+}
+
+.adaptive-wrap{
+
+    display:flex;
+    justify-content: space-between;
+
+    padding: 0.5em;
+
+    font-size: 0.9em;
+    line-height: 1.4;
+
+    p {
+        margin: 0 auto;
+    }
+
+    .adaptive-col-1{
+        max-width: 60%;
+        text-align: left;
+
+        color: darkgray;
+    }
+
+    .adaptive-col-2{
+        max-width: 39%;
+        align-self: flex-end;
+
+        text-align: right;
+
+        color:#666;
+    }
+
+    &:not(:first-child){
+        border-top: 1px solid lightgray;
+    }
+
+}
+
+@media (max-width: 568px) {
+    .adaptive-wrap{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+   .variation-detail-wrap{
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+   .variation-detail-wrap{
+        width: 35%;
+    }
+}
+
+.button.product_type_variation{
+    background: none;
+    border: 1px solid gray;
+    color: gray;
+
+    &:hover{
+        background: whitesmoke;
+        color:black;
+    }
+
+}

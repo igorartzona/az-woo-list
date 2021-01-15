@@ -1,0 +1,19 @@
+/* Оформление списка товаров, выведенных шоткодом */
+
+.woocommerce-active #primary .woocommerce > ul.products li.product {
+    box-shadow: none;
+
+    a.button {
+        font-weight: normal;
+
+        background: none;
+        border: 1px solid gray;
+        color: gray;
+
+        &:hover{
+            background: whitesmoke;
+        }
+
+    }
+
+}
