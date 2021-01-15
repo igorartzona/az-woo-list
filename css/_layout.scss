@@ -1,6 +1,6 @@
 /* Файл стилей для вывода списка продуктов */
 
-.woocommerce-active .site-main *:not(.related) > ul.products{
+.woocommerce-active #primary *:not(.related) > ul.products{
 
     /*Строка продукта*/
     li.product.type-product{
@@ -37,6 +37,7 @@
             margin: 0;
             padding: 0;
             text-align: left;
+            height: inherit;
         }
 
         .price{
@@ -60,7 +61,7 @@
 }
 
 /*когда товары выводятся шоткодом*/
-.woocommerce-active .site-main .woocommerce ul.products li.product {
+.woocommerce-active #primary .woocommerce ul.products li.product {
     box-shadow: none;
 
     a.button {
@@ -80,7 +81,7 @@
 
 @media (max-width: 568px) {
 
-    .woocommerce-active .site-main *:not(.related) > ul.products{
+    .woocommerce-active #primary *:not(.related) > ul.products{
 
         /*Строка продукта*/
         li.product.type-product{
@@ -143,7 +144,7 @@
 
 @media (max-width: 768px) {
 
-    .woocommerce-active .site-main *:not(.related) > ul.products{
+    .woocommerce-active #primary *:not(.related) > ul.products{
 
         /*Строка продукта*/
         li.product{
@@ -161,11 +162,12 @@
 
 @media (min-width: 769px) {
 
-    .woocommerce-active .site-main *:not(.related) > ul.products{
+    .woocommerce-active #primary *:not(.related) > ul.products{
 
         li.product.type-product{
             margin: 0;
 
+            border:0;
             border-bottom: 1px dotted silver;
 
             img{
@@ -177,7 +179,7 @@
             }
 
             .price{
-                width:20%;
+                //width:20%;
                 flex-shrink: 0;
                 font-size: 1rem;
 
@@ -188,9 +190,22 @@
             }
 
             .button{
-                width: 15em;
+                width: 12rem;
                 flex-shrink: 0;
                 margin-left: 2em;
+
+                font-weight: normal;
+
+                /*
+                color: #b23030;
+                border:1px solid #b23030;
+                background: white;
+
+                &:hover{
+                    background: #b23030;
+                    color:white;
+                }*/
+
             }
 
         }
@@ -269,7 +284,7 @@
     }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
    .variation-detail-wrap{
         width: 100%;
     }
