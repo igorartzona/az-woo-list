@@ -12,4 +12,7 @@ add_action('woocommerce_before_single_product',function(){
     //добавляем атрибуты в списке вариаций
     add_action('woocommerce_shop_loop_item_title', 'az_awlv_show_variation_attributes', 15 );
 
+    /* убираем заголовок секции Таблица артикулов*/
+    add_filter('az_variation_list_heading', '__return_false');
+
 });

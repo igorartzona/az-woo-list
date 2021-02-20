@@ -100,6 +100,9 @@
 .woocommerce-loop-category__title {
   text-transform: uppercase; }
 
+.products + .storefront-sorting {
+  margin-top: 1em; }
+
 /* Оформление списка товаров, выведенных шоткодом */
 .woocommerce-active #primary .woocommerce > ul.products li.product {
   box-shadow: none; }
