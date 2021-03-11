@@ -52,7 +52,8 @@
         background: white; }
       .woocommerce-active #primary *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__link {
         flex-wrap: wrap;
-        justify-content: center; }
+        justify-content: center;
+        flex-direction: column; }
       .woocommerce-active #primary *:not(.related) > ul.products li.product.type-product img {
         margin: 0.5em; }
       .woocommerce-active #primary *:not(.related) > ul.products li.product.type-product .woocommerce-loop-product__title {
